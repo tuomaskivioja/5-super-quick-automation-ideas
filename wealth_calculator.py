@@ -31,12 +31,14 @@ def main():
     if prog == 'returns':
         years = int(input("Enter investment period in years: "))
         calculate_wealth_by_year(current_wealth, rate_of_return, monthly_savings, years)
-    else:
+    elif prog == 'freedom':
         try:
             target_wealth = float(input("How much money do you need to be financially free? "))
         except ValueError:
             print("Invalid input. You must only enter numbers, dumbass!! ")
             sys.exit()
         calculate_years_till_freedom(current_wealth, rate_of_return, monthly_savings, target_wealth)
+    else:
+        print("Invalid input. Type 'returns' or 'freedom'")
 
 main()
